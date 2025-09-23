@@ -3,6 +3,7 @@ aiosqlite==0.21.0
 alembic==1.16.5
 annotated-types==0.7.0
 anyio==4.10.0
+airflow-clickhouse-plugin==1.5.0
 apache-airflow-core==3.0.6
 apache-airflow-providers-common-compat==1.7.3
 apache-airflow-providers-common-io==1.6.2
