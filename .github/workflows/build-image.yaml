@@ -50,12 +50,12 @@ jobs:
             .buildx/buildkit/**/*.intoto.json
             .buildx/buildkit/**/*.sbom.*
 
-      # - name: Trigger Airflow dags deploy workflow
-      #   uses: benc-uk/workflow-dispatch@v1
-      #   with:
-      #     token: ${{ secrets.ORG_TOKEN }}
-      #     repository: ${{ secrets.AIRFLOW_REPO }}
-      #     workflow: 'deploy.yaml'
-      #     ref: master
-      #     inputs: |
-      #       tags: ${{ steps.meta.outputs.tags }}
+      - name: Trigger Airflow deployment update
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          token: ${{ secrets.ORG_TOKEN }}
+          repository: ${{ secrets.AIRFLOW_REPO }}
+          workflow: 'deploy-airflow.yaml'
+          ref: master
+          inputs: |
+            tag: ${{ steps.meta.outputs.tags }}
