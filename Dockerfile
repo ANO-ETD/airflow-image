@@ -1,4 +1,4 @@
-FROM apache/airflow:3.0.6
+FROM apache/airflow:3.1.0
 
 COPY requirements.txt .
 COPY install_missing.py .
